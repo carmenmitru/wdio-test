@@ -20,6 +20,7 @@ before_install:
 
 before_script:
   - "npm install"
+  - "npm install -g reg-suit"
 script:
   - npm test -- wdio.conf.local.js
   - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*" # This line is necessary to disable --single-branch option to fetch all remote branches on TravisCI.

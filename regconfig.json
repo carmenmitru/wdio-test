@@ -1,0 +1,21 @@
+{
+  "core": {
+    "workingDir": ".reg",
+    "actualDir": "screenshots/latest",
+    "threshold": 0,
+    "addIgnore": true,
+    "thresholdRate": 0,
+    "ximgdiff": {
+      "invocationType": "client"
+    }
+  },
+  "plugins": {
+    "reg-keygen-git-hash-plugin": true,
+    "reg-notify-github-plugin": {
+      "clientId": "MzQ1NzA3NzYx1i9PyczXLUktLtE3NjY3NzDWT04syk3Ny80sKSoFAA=="
+    },
+    "reg-publish-s3-plugin": {
+      "bucketName": "creativetim-testing"
+    }
+  }
+}

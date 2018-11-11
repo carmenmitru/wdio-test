@@ -61,4 +61,4 @@ typings/
 # WebdriverIO Specific Files
 errorShots/
 screenshots/latest/
-screenshots/diff/
+screenshots/diff/.reg

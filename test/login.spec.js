@@ -1,6 +1,6 @@
-const Login = require("./Login.page.js");
+// // const Login = require("./Login.page.js");
 
-const login = new Login();
+// const login = new Login();
 
 describe("Login Page", function() {
   // Replace with valid email address & password

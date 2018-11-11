@@ -14,7 +14,6 @@ function getScreenshotName(folder, context) {
 
   return path.join(
     process.cwd(),
-    "screenshots",
     folder,
     `${testParent}_${testName}_${type}_${browserName}_v${browserVersion}_${browserWidth}x${browserHeight}.png`
   );

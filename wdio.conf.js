@@ -1,23 +1,4 @@
 const VisualRegressionCompare = require("wdio-visual-regression-service/compare");
-const path = require("path");
-
-function getScreenshotName(folder, context) {
-  const type = context.type;
-  const testParent = context.test.parent;
-  const testName = context.test.title;
-  const browserVersion = parseInt(context.browser.version, 10);
-  const browserName = context.browser.name;
-  const browserViewport = context.meta.viewport;
-  const browserWidth = browserViewport.width;
-  const browserHeight = browserViewport.height;
-
-  return path.join(
-    process.cwd(),
-    "screenshots",
-    folder,
-    `${testParent}_${testName}_${type}_${browserName}_v${browserVersion}_${browserWidth}x${browserHeight}.png`
-  );
-}
 
 var mochaTimeout = process.env.DEBUG ? 99999999 : 60000;
 
@@ -138,16 +119,8 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["sauce", "visual-regression"],
+  services: ["sauce"],
 
-  visualRegression: {
-    compare: new VisualRegressionCompare.LocalCompare({
-      referenceName: getScreenshotName.bind(null, "baseline"),
-      screenshotName: getScreenshotName.bind(null, "latest"),
-      diffName: getScreenshotName.bind(null, "diff")
-    }),
-    viewports: [{ width: 300, height: 500 }, { width: 800, height: 700 }]
-  },
   //
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber

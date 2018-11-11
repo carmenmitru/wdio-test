@@ -9,7 +9,7 @@ describe("Login Page", function() {
 
   beforeEach(function() {
     // Replace URL with correct login page
-    browser.url("http://testyourlog.in/example/index.html");
+     browser.url("https://quizzical-galileo-691989.netlify.com/");
   });
 
   it("should look nice", function() {
